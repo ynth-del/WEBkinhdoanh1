@@ -4,36 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maxwell Scientific - Astronomy</title>
-    
-    <!-- CSS bài 42/43 -->
-    <link rel="stylesheet" type="text/css" href="main.css">
-    
-    <!-- BẮT BUỘC KHÔNG THỂ THIẾU: File CSS của menu để có nền vàng và dàn ngang -->
+
+    <!-- CHỈ nạp css/42.css. KHÔNG nạp 37.css ở đây (37.css có * {margin:0; padding:0} làm hỏng bố cục trang này) -->
     <link rel="stylesheet" type="text/css" href="42.css">
 </head>
 
 <body>
-    <!-- 1. Menu nạp từ home.html -->
-    <div id="menu-container"></div>      
-    <script>
-        fetch('home.html')
-        .then(response => response.text())
-        .then(data => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data, 'text/html');
-            const menu = doc.getElementById('container');
-            if (menu) {
-                document.getElementById('menu-container').innerHTML = menu.outerHTML;
-            } else {
-                document.getElementById('menu-container').innerHTML = data;
-            }
-        })
-        .catch(error => console.error('Lỗi khi tải menu:', error));
-    </script>
+    <!-- Menu không cần nằm trong file này nữa: nó nằm ở khung (frame) phía trên trong index.html -->
 
-    <!-- 2. Khung nội dung trang Maxwell (dùng lớp page-box) -->
     <div class="page-box">
-        <header style="text-align: center;">
+        <header>
             <img src="MWSLogo.gif" alt="Maxwell Scientific" class="logo"><br>
             <nav class="nav">
                 <a href="#">Astronomy</a> |
@@ -44,12 +24,19 @@
             </nav>
         </header>
 
-        <hr style="border: 0.5px solid #ccc; margin: 15px 0;">
+        <hr>
 
         <main>
+            <h1>Astronomy</h1>
+
+            <p>
+                Maxwell Scientific provides a wide range of astronomical products - perfect for classroom demonstrations and projects. Choose from the finest equipment from Bresser<sup>TM</sup>, DO Optics<sup>TM</sup>, and StarVision<sup>TM</sup>.
+            </p>
+
+            <!-- Article nằm sau đoạn mở đầu, trước h3 (đúng cấu trúc bài gốc). Khung tự nằm bên phải, ngang hàng với tiêu đề h3 và danh sách bên dưới -->
             <div class="Article">
-                <h2>Run the Messier Marathon</h2>
-                <img src="m20.jpg" alt="Messier object" class="messier-image" style="float: right; width: 80px; margin-left: 5px;">
+                <h3>Run the Messier Marathon</h3>
+                <img src="m20.jpg" alt="Messier object" class="messier-image">
                 <p>
                     It's time for the annual <b>Messier Marathon</b>. Instead of lacing up
                     their Nikes, amateur astronomers will be hauling telescopes,
@@ -74,20 +61,14 @@
                 </p>
             </div>
 
-            <h1>Astronomy</h1>
+            <h3>Featured Astronomical Products</h3>
 
-            <p>
-                Maxwell Scientific provides a wide range of astronomical products - perfect for classroom demonstrations and projects. Choose from the finest equipment from Bresser<sup>TM</sup>, DO Optics<sup>TM</sup>, and StarVision<sup>TM</sup>.
-            </p>
-
-            <h2>Featured Astronomical Products</h2>
-
-            <ul class="products">
+            <ul>
                 <li>
                     <b>Refractor Kit:</b>
-                    <span class="Special">March Special!</span>
+                    <span class="Special">March Special!
                     Learn about the science of optics by building your own
-                    18" long, 3X refractor telescope. Price $14.95. Stock Number: RK01-005
+                    18" long, 3X refractor telescope. Price $14.95. Stock Number: RK01-005</span>
                 </li>
                 <li>
                     <b>NightDisk:</b>
@@ -111,8 +92,10 @@
                 </li>
                 <li>
                     <b>Classroom Planetarium:</b>
+                    <span class="Special">
                     Planetarium projector projects more than 500 stars and constellations
                     onto the ceiling or wall. Perfect for classroom use. Red star flashlight included to point out individual stars. Price $54.95. Stock Number: CP01-700
+                    </span>
                 </li>
                 <li>
                     <b>Solar Mobile Kit:</b>
@@ -127,7 +110,7 @@
                 </li>
             </ul>
 
-            <h2>Comments From Our Astronomy Customers</h2>
+            <h3>Comments From Our Astronomy Customers</h3>
 
             <p>
                 Here at Maxwell Scientific, we strive to deliver high-quality
@@ -155,14 +138,13 @@
             <p>Brenda Davis, Greely, CO</p>
         </main>
 
+        <hr>
+
         <address>
             MAXWELL SCIENTIFIC<br>
             261 BASS NEEDHAM DRIVE, MUNCIE, IN 45329<br>
             PHONE: (800) 555-2191 FAX: (812) 555-2192
         </address>
     </div>
-
-    <!-- Xóa float trước thẻ đóng body -->
-    <div style="clear: both;"></div>
 </body>
 </html>

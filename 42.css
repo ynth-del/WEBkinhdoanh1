@@ -1,54 +1,40 @@
-/* 1. Định dạng toàn trang */
+
 BODY {
     color: green;
-    background: white url(Draft.jpg) no-repeat fixed center center;
+    background: white url(../Draft.jpg) no-repeat fixed center center;
     font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;        /* như bài bạn kia */
     margin: 0;
-    padding: 0;
 }
 
-/* 2. Khung viền xanh bọc riêng nội dung trang Maxwell Scientific (Đổi tên thành .page-box để không đụng hàng với menu) */
-.page-box {
-    width: 650px;
-    margin: 15px auto;
-    padding: 15px;
-    border: 1px solid #1a568c;
-    background-color: white;
-}
-
-/* 3. Định dạng Tiêu đề */
 H1, H2, H3, H4, H5, H6 {
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(153, 102, 6);
 }
 
-/* 4. Khối Article */
-DIV.Article {
-    padding: 0.5em;
-    border: 1px solid rgb(153, 102, 6);
-    background-color: rgb(252, 221, 163);
-    width: 230px;
-    float: right;
-    margin-left: 12px;
-    margin-bottom: 10px;
+ADDRESS {
     font-size: 0.9em;
+    font-style: normal;
+    text-align: left;
+    text-transform: uppercase;
 }
 
-DIV.Article H2 {
-    margin-top: 0;
+BLOCKQUOTE {
+    background-color: silver;
 }
 
-/* 5. Định dạng icon quả táo (chỉ áp dụng cho UL danh sách sản phẩm) */
-UL.products, main UL {
+UL {
     list-style: circle url(Apple.jpg) outside;
-    padding-left: 20px;
+    display: flow-root; 
+}
+UL + H3 {
+    clear: both;
 }
 
 UL B {
     color: rgb(155, 0, 0);
 }
 
-/* 6. Thẻ liên kết trong trang */
 A {
     font-size: 0.9em;
     color: green;
@@ -65,17 +51,40 @@ A:hover {
     font-weight: bold;
 }
 
-BLOCKQUOTE {
-    background-color: silver;
-    padding: 4px 8px;
-    margin: 8px 0;
+DIV.Article {
+    padding: 0.5em;
+    border-style: solid;
+    border-width: 2px;
+    background-color: rgb(252, 221, 163);
+    width: 220px;
+    float: right;
+    margin-left: 10px;    
+}
+.page-box {
+    width: 650px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    padding: 25px;
+    border: 1px solid #555;
+    background-color: white;
 }
 
-ADDRESS {
-    font-size: 0.9em;
-    font-style: normal;
+.page-box::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.page-box header {
     text-align: center;
-    text-transform: uppercase;
-    color: green;
-    margin-top: 20px;
+}
+DIV.Article H3 {
+    margin-top: 0;
+    text-align: center;
+    color: rgb(155, 0, 0);
+}
+DIV.Article IMG.messier-image {
+    float: right;
+    width: 100px;
+    margin: 0 0 4px 6px;
 }
